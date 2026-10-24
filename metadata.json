@@ -1,0 +1,8 @@
+{
+  "name": "Remix Jeevix",
+  "description": "Jeevix blood donation app with clean white and red theme, Login, Sign Up, and Home dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

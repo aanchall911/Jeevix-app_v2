@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Blood Drop in Crimson Red -->
+    <path
+        android:fillColor="#C2182B"
+        android:pathData="M 54,26 C 54,26 76,50 76,68 C 76,80.15 66.15,90 54,90 C 41.85,90 32,80.15 32,68 C 32,50 54,26 54,26 Z" />
+    <!-- White Heartbeat Pulse Line -->
+    <path
+        android:pathData="M 37,68 L 46,68 L 50,58 L 54,76 L 58,63 L 62,68 L 71,68"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

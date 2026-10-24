@@ -1,0 +1,109 @@
+{
+  "entities": {
+    "userProfile": {
+      "title": "User Profile",
+      "description": "User profile containing blood donation identity and status.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "User Firebase Auth UID."
+        },
+        "name": {
+          "type": "string",
+          "description": "User display name."
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address."
+        },
+        "bloodGroup": {
+          "type": "string",
+          "description": "Blood group of donor (e.g., O+, A-, B+)."
+        },
+        "donorStatus": {
+          "type": "string",
+          "description": "Status of the donor (e.g., Available, Resting)."
+        },
+        "donorId": {
+          "type": "string",
+          "description": "Unique donor ID badge code."
+        },
+        "donationsCount": {
+          "type": "integer",
+          "description": "Total number of blood donations completed."
+        },
+        "emergencyContact": {
+          "type": "string",
+          "description": "Emergency contact number."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last updated timestamp."
+        }
+      },
+      "required": ["userId", "name", "bloodGroup", "createdAt"]
+    },
+    "donationRecord": {
+      "title": "Donation Record",
+      "description": "Individual blood donation event log.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Donation record unique ID."
+        },
+        "userId": {
+          "type": "string",
+          "description": "User ID of the donor."
+        },
+        "donorName": {
+          "type": "string",
+          "description": "Donor name at time of donation."
+        },
+        "bloodGroup": {
+          "type": "string",
+          "description": "Blood group donated."
+        },
+        "donationDate": {
+          "type": "string",
+          "description": "Date or timestamp of donation."
+        },
+        "donationCenter": {
+          "type": "string",
+          "description": "Hospital or Blood Bank facility name."
+        },
+        "unitsDonated": {
+          "type": "integer",
+          "description": "Units of blood donated."
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of donation record (Completed, Verified, Pending)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Record creation timestamp."
+        }
+      },
+      "required": ["id", "userId", "bloodGroup", "unitsDonated", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "userProfile",
+      "description": "Personal user profile and donor badge info."
+    },
+    "/users/{userId}/donations/{donationId}": {
+      "schema": "donationRecord",
+      "description": "Blood donation history logs for a user."
+    }
+  }
+}
